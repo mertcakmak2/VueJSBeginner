@@ -1,60 +1,55 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+      <nav>
+        <router-link to="/">Dersler</router-link>
+        <router-link to="/hocalar">Hocalar</router-link>
+      </nav>
+      <router-view></router-view>
   </div>
 </template>
 
 <script>
+
+import Dersler from './components/Dersler.vue';
+
 export default {
   name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+  components:{
+    Dersler
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
-h1, h2 {
-  font-weight: normal;
-}
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
-ul {
-  list-style-type: none;
-  padding: 0;
+body{
+  background-color: #cf6a87;
+  font-family: 'Montserrat', sans-serif;
+  display: grid;
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: center;
 }
-
-li {
-  display: inline-block;
-  margin: 0 10px;
+body,html{
+  margin: 0;
+  height: 100%;
 }
-
-a {
-  color: #42b983;
+#app{
+  width: 50%;
+}
+nav{
+  padding: 20px 20px 20px 0;
+}
+nav a {
+  padding: 10px;
+  text-decoration: none;
+  background: #f5cd79;
+  border-radius: 4px;
+  color:rgb(0,110,255);
+  font-weight: bold;
+  margin-right: 15px;
 }
 </style>
